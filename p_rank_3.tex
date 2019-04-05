@@ -1,0 +1,246 @@
+\documentclass[11pt,twoside,reqno]{amsart}
+\pdfoutput=1
+\usepackage{amssymb,amsthm,amsthm,amsfonts,latexsym}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{accents}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage[]{hyperref}
+\usepackage[]{cleveref}
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny,spanish,textwidth=2cm]{todonotes}\setlength{\marginparwidth}{0.8in}
+
+\allowdisplaybreaks
+
+\setlength{\textwidth}{16cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{.5cm}
+\setlength{\evensidemargin}{.5cm}
+\setlength{\textheight}{21.5cm}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{atheorem}{Theorem \ref{prank3}}
+\newtheorem*{bproposition}{Proposition \ref{propContracibilitySufConditions}}
+\newtheorem*{cproposition}{Proposition \ref{propositionApGContractibilityLowSteps}}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{conjecture}{Conjecture}{Conjectures}
+
+
+
+\def\co{\colon}
+\def\wt{\widetilde}
+\newcommand{\tq}{\mathrel{{\ensuremath{\: : \: }}}}
+\def\op{\mathrm{op}}
+\newcommand{\rk}[1]{\mathrm{rk}\left( #1 \right)}
+\def\Im{\mathrm{Im}}
+
+%\let\emptyset\varnothing
+\def\Aut{\mathrm{Aut}}
+\def\A{\mathcal{A}}
+\def\B{{\mathcal B}}
+\def\F{\mathcal{F}}
+\def\K{\mathcal{K}}
+\def\S{\mathcal{S}}
+\def\Z{\mathbb{Z}}
+\def\SLV{\mathcal{SLV}}
+\def\PSL{\mathrm{PSL}}
+\def\Sz{\mathrm{Sz}}
+
+\pagestyle{myheadings} \markboth{{\sc  k.i. piterman, i. sadofschi costa, a. viruel}}{{\sc Quillen's conjecture for groups of p-rank 3.}}
+
+
+\begin{document}
+
+\title[Quillen's conjecture for groups of p-rank 3]{Quillen's conjecture for groups of $p$-rank 3}
+
+\author[K.I. Piterman]{Kevin Iv\'an Piterman$^{*}$}
+\author[I. Sadofschi Costa]{Iv\'an Sadofschi Costa$^{**}$}
+\author[A. Viruel]{Antonio Viruel$^{***}$}
+
+\thanks{This work was partially done at the University of M\'alaga, during a research stay of the first two authors, supported by project MTM2016-78647-P.\\
+$*$ Supported by a CONICET doctoral fellowship and grants CONICET PIP 11220170100357CO and UBACyT 20020160100081BA.\\
+$**$ Supported by a CONICET doctoral fellowship and grants ANPCyT PICT-2017-2806, CONICET PIP 11220170100357CO and UBACyT 20020160100081BA \\
+$***$ Supported by...}
+\address{Universidad de Buenos Aires. Facultad de Ciencias Exactas y Naturales. Departamento de Matem\'atica. Buenos Aires, Argentina.}
+
+\address{CONICET-Universidad de Buenos Aires. Instituto de Investigaciones Matem\'aticas Luis A. Santal\'o (IMAS). Buenos Aires, Argentina.}
+
+\email{kpiterman@dm.uba.ar}
+\email{isadofschi@dm.uba.ar}
+\email{viruel@uma.es}
+
+\begin{abstract}
+Let $G$ be a finite group and $\A_p(G)$ be the poset of nontrivial elementary abelian $p$-subgroups of $G$. Quillen conjectured that $O_p(G)$ is nontrivial if $\A_p(G)$ is contractible. We prove Quillen's conjecture for groups of $p$-rank $3$.
+\end{abstract}
+
+
+\subjclass[2010]{57S17, %Finite transformation groups
+		20D05, %Classification of simple and nonsolvable groups
+		57M20, %Two-dimensional complexes
+		55M20, %Fixed points and coincidences
+		55M35, %Finite groups of transformations (including Smith theory)
+		57M60 %Group actions in low dimensions
+		}
+
+
+\keywords{Quillen's conjecture, poset, p-subgroups}
+
+\maketitle
+
+\section{Introduction}
+
+The poset $\S_p(G)$ of nontrivial $p$-subgroups of $G$ was introduced by K.S. Brown in \cite{Brown}, where he proved that the Euler characteristic $\chi(\K(\S_p(G)))$ of its order complex is $1$ modulo the greatest power of $p$ dividing the order of $G$.
+Some years later, Quillen \cite{Q} studied some homotopy properties of $\K(\S_p(G))$.
+In that article, Quillen considered the subposet $\A_p(G)$ of nontrivial elementary abelian $p$-subgroups and proved that it is homotopy equivalent to $\S_p(G)$ \cite[Proposition 2.1]{Q}.
+
+Quillen also proved that if $O_p(G)$, the greatest normal $p$-subgroup of $G$,  is nontrivial then $\A_p(G)$ is contractible \cite[Proposition 2.4]{Q} and conjectured that the converse should hold.
+In this paper we consider the following stronger version of Quillen's conjecture, stated by Aschbacher and Smith \cite{AschbacherSmith}.
+
+\begin{conjecture}[Quillen's conjecture]\label{QCAschbacherSmith}
+If $O_p(G)=1$ then $\wt{H}_*(\A_p(G))\neq 0$.
+\end{conjecture}
+
+Quillen proved some cases of this conjecture. For example, he proved it for solvable groups \cite[Theorem 12.1]{Q}.
+In \cite{AschbacherSmith}, M. Aschbacher and S.D. Smith made a huge progress on the study of this conjecture.
+By using the classification of finite simple groups, they proved that Quillen's conjecture holds if $p>5$ and $G$ does not contain certain unitary components.
+Previously, Aschbacher and Kleidman \cite{AK} had proved Quillen's conjecture for almost simple groups (i.e. finite groups $G$ such that $L\leq G\leq \Aut(L)$ for some simple group $L$).
+
+In this paper we prove Quillen's conjecture \ref{QCAschbacherSmith} for groups of $p$-rank $3$.
+Recall that the \textit{$p$-rank} of $G$ is the maximum possible rank of an elementary abelian $p$-subgroup of $G$ and equals $\dim \K(\A_p(G))+1$.
+The $p$-rank $2$ case was considered by Quillen \cite[Proposition 2.10]{Q} and follows from the fact that an action of a finite group on a tree has a fixed point.
+
+C. Casacuberta and W. Dicks conjectured that every finite group acting on a contractible $2$-complex has a fixed point \cite{CD}.
+This conjecture was studied by Aschbacher and Segev in \cite{AschbacherSegev}.
+Posteriorly, Oliver and Segev classified groups that can act without fixed points on an acyclic $2$-complex. The results of their work \cite{OS} are the basis of our proof of the $p$-rank $3$ case of Quillen's conjecture. Our main result, \cref{prank3} can also be seen as a special case of the Casacuberta-Dicks conjecture.
+
+Note that  \cref{prank3} was not known, for the results of \cite{AschbacherSmith} do not apply for $p<5$.\todo{Quizás es una afirmación demasiado fuerte. Ejemplos concretos.}
+
+\section{The results of Oliver and Segev}
+
+In this section we review the results of \cite{OS} needed in the proof of \cref{prank3}.
+If $X$ is a poset, $\K(X)$ denotes the order complex of $X$ (i.e. the simplicial complex whose simplices are the finite nonempty totally ordered subsets of $X$).
+By a $G$-complex we mean a $G$-CW complex. Note that the order complex of a $G$-poset is always a $G$-complex.
+
+\begin{definition}[{\cite{OS}}]
+ A $G$-complex $X$ is \textit{essential} if there is no normal subgroup $1\neq N\triangleleft G$ such that for each $H\subseteq G$, the inclusion $X^{HN}\to X^H$ induces an isomorphism on integral homology.
+\end{definition}
+
+The main results of \cite{OS} are the following two theorems.
+
+\begin{theorem}[{\cite[Theorem A]{OS}}]\label{teoA}
+ For any finite group $G$, there is an essential fixed point free $2$-dimensional (finite) $\Z$-acyclic $G$-complex if and only if $G$ is isomorphic to one of the simple groups $\PSL_2(2^k)$ for $k\geq 2$, $\PSL_2(q)$ for $q\equiv \pm 3 \pmod 8$ and $q\geq 5$, or $\Sz(2^k)$ for odd $k\geq 3$. Furthermore, the isotropy subgroups of any such $G$-complex are all solvable.
+\end{theorem}
+
+\begin{theorem}[{\cite[Theorem B]{OS}}]\label{teoB}
+ Let $G$ be any finite group, and let $X$ be any $2$-dimensional $\Z$-acyclic $G$-complex. Let $N$ be the subgroup generated by all normal subgroups $N'\triangleleft G$ such that $X^{N'}\neq \emptyset$. Then $X^N$ is $\Z$-acyclic; $X$ is essential if and only if $N=1$; and the action of $G/N$ on $X^N$ is essential.
+\end{theorem}
+
+The set of subgroups of $G$ will be denoted by $\S(G)$.
+
+\begin{definition}[{\cite{OS}}]
+ By a \textit{family} of subgroups of $G$ we mean any subset $\F\subseteq\S(G)$ which is closed under conjugation.
+ A nonempty family is said to be \textit{separating} if it has the following three properties: (a) $G\notin \F$; (b) if $H'\subseteq H$ and $H\in \F$ then $H'\in \F$; (c) for any $H\triangleleft K\subseteq G$ with $K/H$ solvable, $K\in \F$ if $H\in \F$.
+
+ For any family $\F$ of subgroups of $G$, a \textit{$(G,\F)$-complex} will mean a $G$-complex all of whose isotropy subgroups lie in $\F$. A $(G,\F)$-complex is \textit{$H$-universal} if the fixed point set of each $H\in \F$ is acyclic.
+\end{definition}
+
+\begin{lemma}[{\cite[Lemma 1.2]{OS}}]\label{lemma1.2}
+ Let $X$ be any $2$-dimensional acyclic $G$-complex without fixed points. Let $\F$ be the set of subgroups $H\subseteq G$ such that $X^H\neq \emptyset$. Then $\F$ is a separating family of subgroups of $G$, and $X$ is an $H$-universal $(G,\F)$-complex.
+\end{lemma}
+
+If $G$ is not solvable, the separating family of solvable subgroups of $G$ is denoted by $\SLV$.
+
+\begin{proposition}[{\cite[Proposition 6.4]{OS}}]\label{proposition6.4}
+ Assume that $L$ is one of the simple groups $\PSL_2(q)$ or $\Sz(q)$, where $q=p^k$ and $p$ is prime ($p=2$ in the second case). Let $G\subseteq\Aut(L)$ be any subgroup containing $L$, and let $\F$ be a separating family for $G$. Then there is a $2$-dimensional $\Z$-acyclic $(G,\F)$-complex if and only if $G=L$, $\F=\SLV$, and $q$ is a power of $2$ or $q\equiv \pm 3 \pmod 8$. 
+\end{proposition}
+
+\begin{definition}[{\cite[Definition 2.1]{OS}}]
+ For any family $\F$ of subgroups of $G$ define 
+ $$i_\F(H)=\frac{1}{[N_G(H):H]}(1-\chi(\mathcal{K}(\F_{>H}))).$$
+\end{definition}
+
+\begin{lemma}[{\cite[Lemma 2.3]{OS}}]\label{lemma2.3}
+ Fix a separating family $\F$, a finite $H$-universal $(G,\F)$-complex $X$, and a subgroup $H\subseteq G$. For each $n$, let $c_n(H)$ denote the number of orbits of $n$-cells of type $G/H$ in $X$. Then $i_\F(H)=\sum_{n\geq 0} (-1)^nc_n(H)$.
+\end{lemma}
+
+\begin{proposition}[{\cite[Tables 2,3,4]{OS}}]\label{indices}
+ Let $G$ be one of the simple groups $\PSL_2(2^k)$ for $k\geq 2$, $\PSL_2(q)$ for $q\equiv \pm 3 \pmod 8$ and $q\geq 5$, or $\Sz(2^k)$ for odd $k\geq 3$. Then $i_\SLV( 1 ) = 1$.
+\end{proposition}
+
+
+
+\section[The case of p-rank 3]{The case of $p$-rank 3}
+
+Now using the results of Oliver and Segev \cite{OS} we prove Quillen's conjecture for groups of $p$-rank $3$.
+
+\begin{theorem}\label{prank3}
+Let $G$ be a finite group of $p$-rank $3$. If $\wt{H}_*(\mathcal{A}_p(G))=0$ then $O_p(G)\neq 1$.
+\begin{proof}
+Suppose the statement is false and consider a counterexample $G$.
+Then $X=\K(\mathcal{A}_p(G))$ is a $2$-dimensional acyclic complex.
+Equipped with the conjugation action of $G$, $X$ is a $G$-complex.
+Since we are assuming $O_p(G)=1$, the action is fixed point free.
+Consider the subgroup $N$ generated by the subgroups $N'\triangleleft G$ such that $X^{N'}\neq \emptyset$.
+Clearly $N$ is normal in $G$.
+By \cref{teoB} $Y=X^N$ is acyclic (in particular it is nonempty) and the action of $G/N$ on $Y$ is essential and fixed point free.
+By \cref{lemma1.2} $\mathcal{F}=\{ H\leq G/N \tq Y^H\neq \emptyset\}$ is a separating family and $Y$ is an $H$-universal $(G/N,\mathcal{F})$-complex.
+Thus, \cref{teoA} asserts that $G/N$ must be one of the groups $\PSL_2(2^k)$ for $k\geq 2$, $\PSL_2(q)$ for $q\equiv \pm 3 \pmod 8$ and $q\geq 5$, or $\Sz(2^k)$ for odd $k\geq 3$.
+In any case, by \cref{proposition6.4} we must have $\mathcal{F}=\mathcal{SLV}$.
+By \cref{indices}, $i_\mathcal{SLV}(1)=1$.
+Finally by \cref{lemma2.3}, $Y$ must have at least one free $G/N$-orbit.
+Therefore $X$ has a $G$-orbit of type $G/N$. Let $\sigma=(A_0<\ldots <A_j)$ be a simplex of $X$ with stabilizer $N$.
+Since $A_0\triangleleft N$, we have that $O_p(N)$ is nontrivial.
+Since $N\triangleleft G$ and $O_p(N) \, \mathrm{char}\, N$ we have $O_p(N)\triangleleft G$ and therefore $O_p(N)\leq O_p(G)$.
+So $O_p(G)$ is nontrivial, a contradiction.
+\end{proof}
+\end{theorem}
+
+With the same argument we can prove the following generalization of \cref{prank3}.
+
+\begin{theorem}\label{genthm}
+If $K$ is an acyclic and $G$-invariant $2$-dimensional subcomplex of $\K(\S_p(G))$, then $O_p(G)\neq 1$. In particular, $\K(\S_p(G))$ is contractible.
+\end{theorem}
+
+By \cref{genthm}, Quillen's conjecture also holds when $\K(\B_p(G))$ is $2$-dimensional. Recall that the subposet $\B_p(G) = \{Q\in \S_p(G) : Q = O_p(N_G(Q))\}$ is homotopy equivalent to $\S_p(G)$. See \cite{S} for an account of the relations between the different $p$-group complexes.
+
+Finally we mention that a possible approach to prove \cref{QCAschbacherSmith} is to find an acyclic and $G$-invariant $2$-dimensional subcomplex of $\K(\S_p(G))$. If Quillen's conjecture were true, then this would be possible. Therefore, by \cref{genthm} we have the following equivalent version of the conjecture.
+
+\begin{conjecture}[Restatement of Quillen's conjecture]
+Assume $\K(\S_p(G))$ is acyclic. Then there exists a $G$-invariant acyclic subcomplex of $\K(\S_p(G))$ of dimension at most $2$.
+\end{conjecture}
+
+
+\begin{thebibliography}{9}
+\bibitem{AK} M. Aschbacher, P.B. Kleidman. \textit{On a conjecture of Quillen and a lemma of Robinson}. Arch. Math. 55 (1990), 209--217.
+\bibitem{AschbacherSmith} M. Aschbacher, S.D. Smith. \textit{On Quillen's conjecture for the $p$-groups complex}. Ann. Math. (2) 137 (1993), 473--529.
+\bibitem{AschbacherSegev} M. Aschbacher, Y. Segev. \textit{A fixed point theorem for groups acting on finite $2$-dimensional acyclic simplicial complexes}. Proc. London Math. Soc. (3) 67 (1993), 329--354.
+\bibitem{Brown} K.S. Brown. \textit{Euler characteristics of groups: the $p$-fractional part}. Invent. Math. 29 (1975), 1--5.
+\bibitem{CD} C. Casacuberta, W. Dicks. \textit{On finite groups acting on acyclic complexes of dimension two}. Publ. Mat. 36 (1992), 463--466.
+\bibitem{OS} B. Oliver, Y. Segev. \textit{Fixed point free actions on $\Z$-acyclic $2$-complexes}. Acta. Math. 189 (2002), 203--285.
+\bibitem{Q} D. Quillen. \textit{Homotopy properties of the poset of nontrivial p-subgroups of a group}. Advances in Mathematics 28 (1978), 101--128.
+\bibitem{S} S.D. Smith. \textit{Subgroup complexes}. Mathematical Surveys and Monographs, 179. Amer. Math. Soc., Providence, RI. 2011. xii+364.
+\end{thebibliography}
+\end{document}
