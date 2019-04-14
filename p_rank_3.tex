@@ -89,7 +89,7 @@ $***$ Supported by...}
 
 \address{CONICET-Universidad de Buenos Aires. Instituto de Investigaciones Matem\'aticas Luis A. Santal\'o (IMAS). Buenos Aires, Argentina.}
 
-\address{Departamento de Álgebra, Geometría y Topología, Universidad de Málaga, Campus de Teatinos, 29071 Málaga, Spain.}
+\address{Departamento de \'Algebra, Geometr\'ia y Topolog\'ia, Universidad de M\'alaga, Campus de Teatinos, 29071 M\'alaga, Spain.}
 
 \email{kpiterman@dm.uba.ar}
 \email{isadofschi@dm.uba.ar}
@@ -119,14 +119,15 @@ The poset $\S_p(G)$ of nontrivial $p$-subgroups of $G$ was introduced by K.S. Br
 Some years later, Quillen \cite{Q} studied some homotopy properties of $\K(\S_p(G))$.
 In that article, Quillen considered the subposet $\A_p(G)$ of nontrivial elementary abelian $p$-subgroups and proved that it is homotopy equivalent to $\S_p(G)$ \cite[Proposition 2.1]{Q}.
 
-Quillen also proved that if $O_p(G)$, the greatest normal $p$-subgroup of $G$,  is nontrivial then $\A_p(G)$ is contractible \cite[Proposition 2.4]{Q} and conjectured that the converse should hold.
+Quillen also proved that if $O_p(G)$, the largest normal $p$-subgroup of $G$,  is nontrivial then $\A_p(G)$ is contractible \cite[Proposition 2.4]{Q} and conjectured that the converse should hold.
 In this paper we consider the following stronger version of Quillen's conjecture, stated by Aschbacher and Smith \cite{AschbacherSmith}.
 
 \begin{conjecture}[Quillen's conjecture]\label{QCAschbacherSmith}
 If $O_p(G)=1$ then $\wt{H}_*(\A_p(G))\neq 0$.
 \end{conjecture}
 
-Quillen proved some cases of this conjecture. For example, he proved it for solvable groups \cite[Theorem 12.1]{Q}.
+Quillen proved some cases of this conjecture.
+For example, he proved it for solvable groups \cite[Theorem 12.1]{Q}.
 In \cite{AschbacherSmith}, M. Aschbacher and S.D. Smith made a huge progress on the study of this conjecture.
 By using the classification of finite simple groups, they proved that Quillen's conjecture holds if $p>5$ and $G$ does not contain certain unitary components.
 Previously, Aschbacher and Kleidman \cite{AK} had proved Quillen's conjecture for almost simple groups (i.e. finite groups $G$ such that $L\leq G\leq \Aut(L)$ for some simple group $L$).
@@ -139,7 +140,7 @@ C. Casacuberta and W. Dicks conjectured that every finite group acting on a cont
 This conjecture was studied by Aschbacher and Segev in \cite{AschbacherSegev}.
 Posteriorly, Oliver and Segev classified groups that can act without fixed points on an acyclic $2$-complex. The results of their work \cite{OS} are the basis of our proof of the $p$-rank $3$ case of Quillen's conjecture. Our main result, \cref{prank3} can also be seen as a special case of the Casacuberta-Dicks conjecture.
 
-Note that  \cref{prank3} was not known, for the results of \cite{AschbacherSmith} do not apply for $p<5$.\todo{I: ahora tenemos ejemplos para afirmar esto con más confianza no?}
+Note that  \cref{prank3} was not known, for the results of \cite{AschbacherSmith} do not apply for $p<5$.\todo{I: ahora tenemos ejemplos para afirmar esto con mas confianza no?}
 
 \section{The results of Oliver and Segev}
 
@@ -197,9 +198,8 @@ If $G$ is not solvable, the separating family of solvable subgroups of $G$ is de
 
 \section[The case of p-rank 3]{The case of $p$-rank 3}
 
-\todo{Recordar que la acción de $G$ en $S_p(G)$ es por conjugación.
+%\todo{Recordar que la accion de $G$ en $S_p(G)$ es por conjugaciÃ³n.}
 %Equipped with the conjugation action of $G$, $X$ is a $G$-complex.
-}
 %Now using the results of Oliver and Segev \cite{OS} we prove Quillen's conjecture for groups of $p$-rank $3$.
 
 
@@ -243,11 +243,76 @@ Assume $\K(\S_p(G))$ is acyclic. Then there exists a $G$-invariant acyclic subco
 
 \section{Some examples}
 
-\todo[inline]{I: acá irian los ejemplos.}
+One of the first reductions in the proof of the main theorem of Aschbacher-Smith \cite{AschbacherSmith} is to assume that $O_{p'}(G) = 1$ (see \cite[Proposition 1.6]{AschbacherSmith}).
+In order to perform such reduction, they use \cite[Theorems 2.3 \& 2.4]{AschbacherSmith}.
+The hypothesis $p>5$ is the key of why they can carry on the proof and use such theorems.
+More precisely, they are not allowed to apply \cite[Theorem 2.3]{AschbacherSmith} if a component of $C_G(O_{p'}(G))$ is isomorphic to $L_2(8)$, $U_3(8)$ or $Sz(32)$ with $p = 3$, $3$ or $5$ respectively.
 
-$p=3$, $$G=(\Sz(8)^3 \times U_3(8) )\rtimes (C_3\times C_3)$$
+In view of this, we present some examples such that the reductions of \cite{AschbacherSmith} cannot be carried out for $p =3$ or $5$ due to the presence of those components in $C_G(O_{p'}(G))$. Nevertheless, our theorem does hold in these examples.
 
-...
+\begin{example}\label{example3Prank3}
+Let $p = 3$ and let $G = (\Sz(2^{3^n})\times U_3(8))\rtimes C_{3^n}$, where $C_{3^n}$ acts by field automorphism on $\Sz(2^{3^n})$ and trivially on $U_3(8)$.
+Note that $O_{p'}(G) = \Sz(2^{3^n})$ and $C_G(O_{p'}(G)) = U_3(8)$.
+Therefore, the reduction to $O_{p'}(G) = 1$ cannot be performed in this group by using the techniques of \cite{AschbacherSmith}.
+
+Moreover, $O_p(G/O_{p'}(G)) = C_{3^n}\neq 1$ and $O_p(G) = 1$.
+By \cite[Lemma 0.12]{AschbacherSmith}, there is an inclusion $\tilde{H}_*(\A_p(G / O_{p'}(G))) \subseteq \tilde{H}_*(\A_p(G))$.
+However, we have $\tilde{H}_*(\A_p(G / O_{p'}(G))) = 0$, so we cannot produce non-trivial homology on $\A_p(G)$ in this way.
+
+The $p$-rank of $G$ is $m_p(G) = m_p(U_3(8)\times C_{3^n}) = m_p(U_3(8)) + 1 = 3$.
+Hence, the main theorem of \cite{AschbacherSmith} does not apply but, by Corollary \ref{prank3}, Quillen's conjecture holds for $G$.
+\end{example}
+
+\begin{example}\label{example3Prank4}
+Let $p = 3$ and consider the following group.
+Take $A = C_{3^n}$ and $B = C_3$.
+Let $G=(\Sz(2^{3^n})^3 \times U_3(8))\rtimes (A\times B)$ be the split extension with the following actions.
+The group $A$ acts on $\Sz(2^{3^n})^3$ by field automorphism on each copy of the Suzuki group, while $B$ acts by permuting the three copies of the Suzuki groups.
+The action of $B$ on $U_3(8)$ is also by field automorphism but we let $A$ act trivially on this group.
+
+Now note that $O_p(G) = 1$, $O_{p'}(G) = \Sz(2^{3^n})^3$ and $C_G(O_{p'}(G)) = U_3(8)$.
+Therefore, the reduction of \cite{AschbacherSmith} to $O_{p'}(G) = 1$ cannot be done in this group.
+Also, the conclusion of \cite[Lemma 0.12]{AschbacherSmith} does not produce non-trivial homology in $\A_p(G)$ since $O_p(G / O_{p'}(G)) = A \neq 1$.
+
+The group $G$ has $p$-rank $4$ given that
+\[m_p(G) = m_p(U_3(8) \rtimes (A\times B)) = m_p(A\times (U_3(8)\rtimes B)) = m_p(A) + m_p(U_3(8) \rtimes B) = 1 + 3 = 4.\]
+In order to see that Quillen's conjecture holds for $G$ and $p = 3$, the aim is to find a $G$-invariant $2$-dimensional subcomplex $K$ of $\K(\S_p(G))$ which is also homotopy equivalent to $\K(\S_p(G))$.
+Note that $\K(\A_p(G))$ is $3$-dimensional in this case.
+Suppose we find such subcomplex $K$.
+If Quillen's conjecture fails for $G$, then $\K(\S_p(G))$ is acyclic.
+Therefore, $K$ is acyclic.
+By Theorem \ref{genthm}, $O_p(G) \neq 1$, a contradiction.
+
+One candidate for $K$ is $\K(\B_p(G))$. However, we do not know yet if this subcomplex has dimension $2$.\todo{K: esto hay que terminar de ver}
+\end{example}
+
+
+
+Further examples can be built in a similar way for $p = 5$.
+
+\begin{example}\label{example5Prank4}
+Let $p = 5$. Let $r$ be a prime number such that $r\equiv 2$ or $3\mod 5$ and let $q = r^{5^n}$.
+Then, the simple groups $L_2(q)$, $G_2(q)$, ${}^3D_4(q^3)$ and ${}^2G_2(3^{5^n})$ have order prime to $5$.\todo{K: volver a revisar la cuenta}
+We construct $G$ similar to the previous examples.
+Let $L$ be one of the simple groups above and let $A = C_{5^n}$ and $B = C_5$.
+Let $G = (L^5 \times \Sz(32)^2)\rtimes (A\times B)$, where $A$ acts on each copy of $L$ by field automorphism and trivially on $\Sz(32)^2$, and $B$ acts by permuting the copies $L$ and by field automorphism on each copy of $\Sz(32)$.
+
+Note that $O_{p'}(G) = L^5$ and $C_G(O_{p'}(G)) = \Sz(32)^2$.
+Therefore, the reduction to $O_{p'}(G) = 1$ cannot be carried out in this example by using \cite[Proposition 1.6]{AschbacherSmith}.
+
+On the other hand, $O_p(G) = 1$ and $O_p(G/O_{p'}(G)) = A\neq 1$.
+Also, the $p$-rank of $G$ is
+\[m_p(G) = m_p(\Sz(32)^2\rtimes (A\times B)) = m_p(A) + m_p(\Sz(32)^3\rtimes B) = 1 + 3 = 4.\]
+Now the aim is to find a $G$-invariant $2$-dimensional homotopy equivalent subcomplex of $\K(\S_p(G))$ to proceed like in Example \ref{example3Prank4}.\todo{K: hay que terminar como el otro}
+\end{example}
+
+\begin{example}\label{example5Prank3}
+Similar to Example \ref{example3Prank3}, with the notations of Example \ref{example5Prank4}, if $G = (L\times \Sz(32)^2)\rtimes A$ then $m_p(G) = 3$, $O_p(G) = 1$, $O_{p'}(G) = L$ and $O_p(G/O_{p'}(G)) = A\neq 1$. Therefore, the reductions of Aschbacher-Smith do not apply but by Corollary \ref{prank3}, Quillen's conjecture holds for $G$.
+\end{example}
+
+Finally, we remark that the prime $2$ is not treated in the principal theorems used in \cite{AschbacherSmith}.
+Therefore, our result does present new cases of Quillen's conjecture that does not follow from the techniques and reductions of \cite{AschbacherSmith}.\todo{K:escribir mejor esta frase}
+
 \bibliographystyle{amsalpha} % plain, alpha, amsalpha, etc
 \bibliography{references}
 \end{document}
